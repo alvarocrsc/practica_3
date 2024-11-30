@@ -84,7 +84,7 @@
 }
 
 .offer__content {
-    flex: 0 0 65%;
+    flex: 1 1 auto;
     max-width: 65%;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -140,6 +140,13 @@
     font-size: 1rem;
 }
 
+.offer__house,
+.offer__arrow,
+.offer__money {
+    display: flex;
+    align-items: center;
+}
+
 .accessories__wrapper {
     max-width: 1440px;
     margin: 0 auto;
@@ -177,6 +184,10 @@
     align-items: flex-start;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.accessories__img {
+    align-self: center;
 }
 
 .accessories__title2 {
@@ -273,7 +284,7 @@
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
-    border-top: solid rgb(198, 198, 198);
+    border-top: 1px solid rgb(198, 198, 198);
 }
 
 .footer__text {
@@ -286,29 +297,49 @@
     font-size: 1.25rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
     .header__buttons-right {
         display: none;
     }
 
     .offer__layout {
-        flex-direction: column; /* Cambia el diseño a columnas */
-        align-items: center; /* Centra los elementos horizontalmente */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .offer__photo,
     .offer__content {
-        max-width: 100%; /* Permite que ocupen todo el ancho */
-        flex: none; /* Restablece las proporciones */
+        max-width: 100%; 
+        flex: none; 
     }
 
     .offer__photo img {
-        width: 100%; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
-        height: auto; /* Mantiene las proporciones */
+        width: 100%; 
+        height: auto;
     }
 
     .offer__advantages {
-        width: 100%;
+        padding-top: 1.5rem;
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 10px; 
+    }
+
+    .offer__house, .offer__arrow {
+        gap: 10px;
+        display: flex; 
+        align-items: center;
+        justify-content: flex-start; 
+        flex: 1 1 calc(50% - 10px); 
+        box-sizing: border-box;
+    }
+
+    .offer__money {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 50%;
     }
 
     .accessories__layout {
